@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <style>
+      .row+.row {
+        margin-top: 1rem;
+      }
+    </style>
+    <title>PDF Split</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF Split</h1>
+        <p>This tool is used to convert a PDF into multiple PDFs.</p>
+      </div>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <input type="text" class="form-control" id="pdf-to-convert" placeholder="Select a PDF file to convert" onclick="openPDF()" readonly>
+            <button type="button" class="input-group-addon" onclick="openPDF()" title="Select PDF to Convert"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <input type="text" class="form-control" id="output-directory" placeholder="Select an output directory" readonly>
+            <button type="button" class="input-group-addon" onclick="setOutput()" title="Select Output Folder"><i class="fa fa-folder-open-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+            <input type="number" class="form-control" id="pages-per-file" step="1" value="2">
+            <span class="input-group-addon" title="Page(s) per each file"><i class="fa fa-files-o" aria-hidden="true"></i></span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="input-group">
+            <input type="text" class="form-control" id="filename-prefix" value="splitpdf" placeholder="Name prefix for split files">
+            <span class="input-group-addon" title="Filename prefix for split files"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button type="button" class="btn btn-primary" id="convert-button" onclick="convert()"><i class="fa fa-repeat" aria-hidden="true"></i> Convert</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src="assets/js/index.js"></script>
+</body>
+
+</html>
