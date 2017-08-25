@@ -4,16 +4,21 @@
   "description": "PDFSplit to split PDF pages into multiple PDF files.",
   "main": "main.js",
   "scripts": {
-  	"pack": "electron-builder --dir",
-  	"dist": "electron-builder",
-  	"postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Keiran Tai <tkeiran@gmail.com> (https://github.com/keirantai)",
   "license": "Apache-2.0",
   "build": {
-  	"appId": "com.keiran.pdfsplit",
-  	"nodeGypRebuild": true
+    "appId": "com.keiran.pdfsplit",
+    "productName": "PDF Split",
+    "npmRebuild": true,
+    "buildDependenciesFromSource": true,
+    "win": {
+      "target": "portable"
+    }
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
@@ -21,7 +26,6 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
-    "electron-builder": "^19.24.1",
-    "electron-rebuild": "^1.6.0"
+    "electron-builder": "^19.24.1"
   }
 }
